@@ -17,14 +17,14 @@
 
 直接对 Claude Code 说（链接换成实际地址）：
 
-> 请帮我安装 install-skill：https://github.com/\<用户名\>/my-skills
+> 请帮我安装 install-skill：https://github.com/SuiKaSan/my-skills
 
 装过一次后，以后装任何 GitHub 上的 skill 都只要一句"请帮我安装 xxx"+ 链接。
 
 ### Plugin marketplace（Claude Code 官方入口）
 
 ```
-/plugin marketplace add <用户名>/my-skills
+/plugin marketplace add SuiKaSan/my-skills
 /plugin install human-like-conversation@my-skills
 /plugin install install-skill@my-skills
 ```
@@ -32,7 +32,7 @@
 ### clone 后用安装脚本（要改源或想统一管理）
 
 ```sh
-git clone https://github.com/<用户名>/my-skills.git
+git clone https://github.com/SuiKaSan/my-skills.git
 cd my-skills
 ./install.sh                          # 装全部
 ./install.sh human-like-conversation  # 只装指定的
