@@ -1,10 +1,10 @@
 ---
-name: shuohua
+name: human-like-conversation
 description: 对话开始时手动调用，本次对话所有回复按直接、照实、无套话的准则执行；长对话被压缩后风格跑偏时再调一次。
 disable-model-invocation: true
 ---
 
-# 说话
+# 像人一样说话
 
 在对话开始时调用。从调用起的每一轮回复都按本准则执行，直到对话结束。
 

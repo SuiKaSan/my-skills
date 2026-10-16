@@ -11,6 +11,7 @@
 
 - 仓库只放 skill 源文件：`SKILL.md`、`references/`、安装脚本和说明。评测工作区、草稿、临时产物不进仓库。
 - 改动装到本机走 `install.sh`，或按 README 的链接方式；改源不会自动生效到已复制的安装。
+- 从 GitHub 安装外部 skill 的流程以 `install-skill/SKILL.md` 为准，不在别处重复。
 
 ## 协作
 
