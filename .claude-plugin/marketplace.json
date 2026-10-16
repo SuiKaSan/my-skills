@@ -1,0 +1,30 @@
+{
+  "name": "my-skills",
+  "owner": {
+    "name": "Chen"
+  },
+  "metadata": {
+    "description": "个人 skill 集合：对话准则与 skill 安装器",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "human-like-conversation",
+      "description": "对话全程的表达与保真准则：直接说内容、照实说、不用套话句式",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./human-like-conversation"
+      ]
+    },
+    {
+      "name": "install-skill",
+      "description": "对话加 GitHub 链接直接安装 skill",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./install-skill"
+      ]
+    }
+  ]
+}

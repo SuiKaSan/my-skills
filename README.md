@@ -1,21 +1,39 @@
 # my-skills
 
-个人的 AI 助手 skill 集合。每个子目录是一个 skill，`SKILL.md` 是入口，Windows、macOS、Linux 都能装。
+个人的 AI 助手 skill 集合。每个子目录是一个 skill，`SKILL.md` 是入口。
 
 ## 收录
 
 | Skill | 用途 |
 |---|---|
 | [human-like-conversation](human-like-conversation/) | 对话全程的表达与保真准则：直接说内容、照实说、不用套话句式。新对话开始时 `/human-like-conversation` 调用一次，全程生效 |
-| [install-skill](install-skill/) | 在任何对话里说"请帮我安装 xxx"并附上 GitHub 链接，自动把该 skill 装进本仓库并安装到本机 |
+| [install-skill](install-skill/) | 在任何对话里说"请帮我安装 xxx"并附上 GitHub 链接，自动 clone、安装到本机，本地有集合仓库时顺便收编 |
 
 ## 安装
 
-先 clone 本仓库，然后二选一。
+三种方式，都不需要先 clone 本仓库。
 
-复制安装（改了仓库里的源要重跑一次）：
+### 对话式（最省事）
+
+直接对 Claude Code 说（链接换成实际地址）：
+
+> 请帮我安装 install-skill：https://github.com/\<用户名\>/my-skills
+
+装过一次后，以后装任何 GitHub 上的 skill 都只要一句"请帮我安装 xxx"+ 链接。
+
+### Plugin marketplace（Claude Code 官方入口）
+
+```
+/plugin marketplace add <用户名>/my-skills
+/plugin install human-like-conversation@my-skills
+/plugin install install-skill@my-skills
+```
+
+### clone 后用安装脚本（要改源或想统一管理）
 
 ```sh
+git clone https://github.com/<用户名>/my-skills.git
+cd my-skills
 ./install.sh                          # 装全部
 ./install.sh human-like-conversation  # 只装指定的
 ```
@@ -32,11 +50,11 @@ ln -s "$(pwd)/human-like-conversation" ~/.claude/skills/human-like-conversation
 New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\human-like-conversation" -Target "$(pwd)\human-like-conversation"
 ```
 
-目标目录默认 `~/.claude/skills`，可用环境变量 `CLAUDE_SKILLS_DIR` 覆盖。对已经用链接安装的 skill 重跑 `install.sh`，会把链接换回复制版。
+`./install.sh` 是复制安装，目标目录默认 `~/.claude/skills`（环境变量 `CLAUDE_SKILLS_DIR` 覆盖）。对已经用链接安装的 skill 重跑，会把链接换回复制版。
 
 ## 从 GitHub 安装别的 skill
 
-装好 install-skill 后，在任何对话里说"请帮我安装 xxx"并贴上 GitHub 链接，它会自动完成：clone、找到 skill、装进本仓库、安装到本机。详细流程见 [install-skill/SKILL.md](install-skill/SKILL.md)。
+装好 install-skill 后，在任何对话里说"请帮我安装 xxx"并贴上 GitHub 链接即可。详细流程见 [install-skill/SKILL.md](install-skill/SKILL.md)。
 
 ## 添加新 skill
 
