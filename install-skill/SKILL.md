@@ -1,11 +1,11 @@
 ---
 name: install-skill
-description: 用户说"请帮我安装 xxx"并附上 GitHub 链接时使用。把外部 skill 装进本地 skill 仓库（C:\code\my-skills）再安装到 Claude Code 的 skills 目录。
+description: 用户说"请帮我安装 xxx"并附上 GitHub 链接时使用。把外部 skill 装进本地 skill 仓库再安装到 Claude Code 的 skills 目录。
 ---
 
 # 安装外部 skill
 
-用户给出 GitHub 链接要求安装 skill 时按此流程执行。skill 仓库在 `C:\code\my-skills`（Git Bash 里是 `/c/code/my-skills`），不存在时先问用户是 clone 还是怎么处理，不要自作主张新建。
+用户给出 GitHub 链接要求安装 skill 时按此流程执行。skill 仓库的位置按顺序找：环境变量 `MY_SKILLS_REPO`；`C:\code\my-skills`（Git Bash 里是 `/c/code/my-skills`）；`~/code/my-skills`。都找不到时问用户仓库在哪、要不要 clone，不要自作主张新建。
 
 1. **clone 到临时目录**，用完删掉：
    ```sh
