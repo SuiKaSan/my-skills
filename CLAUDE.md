@@ -17,3 +17,4 @@
 
 - 提交一律以仓库所有者名义，不加 AI 署名行（不写 `Co-Authored-By`），这是既定约定。
 - 发版流程：更新 `.claude-plugin/marketplace.json` 里的 `version` 和各 skill 目录的 `VERSION` 文件，提交后打 tag（`v0.1.0` 风格）并推送，再在 GitHub 上发 Release，用中文写本版变化。
+- 发版必须等用户明确说发版。平时的改动提交推送后就停在那里；版本号文件、tag 和 Release 不跟着功能改动顺手做。
